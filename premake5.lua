@@ -10,6 +10,12 @@ workspace "AALife_Engine"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+-- Include directories relative to root folder (solution dir)
+IncludeDir = {}
+IncludeDir["GLFW"] = "AALife_Engine/vendor/GLFW/include"
+
+include "AALife_Engine/vendor/GLFW"
+
 project "AALife_Engine"
 	location "AALife_Engine"
 	kind "SharedLib"
@@ -17,6 +23,9 @@ project "AALife_Engine"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
+
+	pchheader "alePCH.h"
+	pchsource "AALife_Engine/src/alePCH.cpp"
 
 	files
 	{
@@ -27,7 +36,14 @@ project "AALife_Engine"
 	includedirs
 	{
 		"%{prj.name}/src",
-		"%{prj.name}/vendor/spdlog/include"
+		"%{prj.name}/vendor/spdlog/include",
+		"%{IncludeDir.GLFW}"
+	}
+
+	links
+	{
+		"GLFW",
+		"opengl32.lib"
 	}
 
 	filter "system:windows"

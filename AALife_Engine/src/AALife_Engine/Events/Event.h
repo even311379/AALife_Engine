@@ -1,8 +1,6 @@
 #pragma once
-
+#include "alePCH.h"
 #include "AALife_Engine/Core.h"
-#include <string>
-#include <functional>
 
 namespace ale {
 	/*
