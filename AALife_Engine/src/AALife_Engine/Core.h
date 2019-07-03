@@ -10,3 +10,5 @@
 	#error	aalife engine only support Windoes!
 
 #endif
+
+#define BIT(x) (1 << x)

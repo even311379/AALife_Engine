@@ -4,6 +4,9 @@
     <Filter Include="AALife_Engine">
       <UniqueIdentifier>{3C1C221B-A8DC-9D51-7117-E7CEDD96E22D}</UniqueIdentifier>
     </Filter>
+    <Filter Include="AALife_Engine\Events">
+      <UniqueIdentifier>{A02C0E5F-8CBB-9728-35DA-AB232148A8CE}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\AALife_Engine.h" />
@@ -15,6 +18,18 @@
     </ClInclude>
     <ClInclude Include="src\AALife_Engine\EntryPoint.h">
       <Filter>AALife_Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AALife_Engine\Events\ApplicationEvent.h">
+      <Filter>AALife_Engine\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AALife_Engine\Events\Event.h">
+      <Filter>AALife_Engine\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AALife_Engine\Events\KeyEvent.h">
+      <Filter>AALife_Engine\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AALife_Engine\Events\MouseEvent.h">
+      <Filter>AALife_Engine\Events</Filter>
     </ClInclude>
     <ClInclude Include="src\AALife_Engine\Log.h">
       <Filter>AALife_Engine</Filter>
