@@ -2,6 +2,7 @@
 
 // for use by aalife engine applications
 #include "AALife_Engine/Application.h"
+#include "AALife_Engine/Layer.h"
 #include "AALife_Engine/Log.h"
 
 // --------Entry Point ----------

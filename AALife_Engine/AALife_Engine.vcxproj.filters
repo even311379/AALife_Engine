@@ -7,12 +7,6 @@
     <Filter Include="AALife_Engine\Events">
       <UniqueIdentifier>{A02C0E5F-8CBB-9728-35DA-AB232148A8CE}</UniqueIdentifier>
     </Filter>
-    <Filter Include="AALife_Engine\Platform">
-      <UniqueIdentifier>{c322f154-2550-42f4-bbd2-68cccf3c7227}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="AALife_Engine\Platform\Windows">
-      <UniqueIdentifier>{b7f6b5a6-6fc9-4e6c-8316-a03db25a5381}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\AALife_Engine.h" />
@@ -37,27 +31,39 @@
     <ClInclude Include="src\AALife_Engine\Events\MouseEvent.h">
       <Filter>AALife_Engine\Events</Filter>
     </ClInclude>
-    <ClInclude Include="src\AALife_Engine\Log.h">
+    <ClInclude Include="src\AALife_Engine\Layer.h">
       <Filter>AALife_Engine</Filter>
     </ClInclude>
-    <ClInclude Include="src\alePCH.h" />
-    <ClInclude Include="src\AALife_Engine\WindowsWindow.h">
-      <Filter>AALife_Engine\Platform\Windows</Filter>
+    <ClInclude Include="src\AALife_Engine\LayerStack.h">
+      <Filter>AALife_Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AALife_Engine\Log.h">
+      <Filter>AALife_Engine</Filter>
     </ClInclude>
     <ClInclude Include="src\AALife_Engine\Window.h">
       <Filter>AALife_Engine</Filter>
     </ClInclude>
+    <ClInclude Include="src\AALife_Engine\WindowsWindow.h">
+      <Filter>AALife_Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\alePCH.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\AALife_Engine\Application.cpp">
       <Filter>AALife_Engine</Filter>
     </ClCompile>
+    <ClCompile Include="src\AALife_Engine\Layer.cpp">
+      <Filter>AALife_Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AALife_Engine\LayerStack.cpp">
+      <Filter>AALife_Engine</Filter>
+    </ClCompile>
     <ClCompile Include="src\AALife_Engine\Log.cpp">
       <Filter>AALife_Engine</Filter>
     </ClCompile>
-    <ClCompile Include="src\alePCH.cpp" />
     <ClCompile Include="src\AALife_Engine\WindowsWindow.cpp">
-      <Filter>AALife_Engine\Platform\Windows</Filter>
+      <Filter>AALife_Engine</Filter>
     </ClCompile>
+    <ClCompile Include="src\alePCH.cpp" />
   </ItemGroup>
 </Project>

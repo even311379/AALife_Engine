@@ -84,6 +84,7 @@
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <AdditionalOptions>/MDd %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -106,6 +107,7 @@
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <AdditionalOptions>/MD %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -128,6 +130,7 @@
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <AdditionalOptions>/MD %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -149,6 +152,8 @@
     <ClInclude Include="src\AALife_Engine\Events\Event.h" />
     <ClInclude Include="src\AALife_Engine\Events\KeyEvent.h" />
     <ClInclude Include="src\AALife_Engine\Events\MouseEvent.h" />
+    <ClInclude Include="src\AALife_Engine\Layer.h" />
+    <ClInclude Include="src\AALife_Engine\LayerStack.h" />
     <ClInclude Include="src\AALife_Engine\Log.h" />
     <ClInclude Include="src\AALife_Engine\Window.h" />
     <ClInclude Include="src\AALife_Engine\WindowsWindow.h" />
@@ -156,6 +161,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\AALife_Engine\Application.cpp" />
+    <ClCompile Include="src\AALife_Engine\Layer.cpp" />
+    <ClCompile Include="src\AALife_Engine\LayerStack.cpp" />
     <ClCompile Include="src\AALife_Engine\Log.cpp" />
     <ClCompile Include="src\AALife_Engine\WindowsWindow.cpp" />
     <ClCompile Include="src\alePCH.cpp">
