@@ -13,8 +13,12 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 -- Include directories relative to root folder (solution dir)
 IncludeDir = {}
 IncludeDir["GLFW"] = "AALife_Engine/vendor/GLFW/include"
+IncludeDir["Glad"] = "AALife_Engine/vendor/Glad/include"
+IncludeDir["ImGui"] = "AALife_Engine/vendor/imgui"
 
 include "AALife_Engine/vendor/GLFW"
+include "AALife_Engine/vendor/Glad"
+include "AALife_Engine/vendor/imgui"
 
 project "AALife_Engine"
 	location "AALife_Engine"
@@ -37,12 +41,16 @@ project "AALife_Engine"
 	{
 		"%{prj.name}/src",
 		"%{prj.name}/vendor/spdlog/include",
-		"%{IncludeDir.GLFW}"
+		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.Glad}",
+		"%{IncludeDir.ImGui}"
 	}
 
 	links
 	{
 		"GLFW",
+		"Glad",
+		"ImGui",
 		"opengl32.lib"
 	}
 
@@ -55,6 +63,7 @@ project "AALife_Engine"
 		{
 			"ALE_PLATFORM_WINDOWS",
 			"ALE_BUILD_DLL",
+			"GLFW_INCLUDE_NONE"
 		}
 
 		postbuildcommands

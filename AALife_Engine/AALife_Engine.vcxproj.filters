@@ -7,6 +7,18 @@
     <Filter Include="AALife_Engine\Events">
       <UniqueIdentifier>{A02C0E5F-8CBB-9728-35DA-AB232148A8CE}</UniqueIdentifier>
     </Filter>
+    <Filter Include="AALife_Engine\ImGui">
+      <UniqueIdentifier>{66CEF548-D22F-D356-5B9D-1909C7FD0916}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="AALife_Engine\Platform">
+      <UniqueIdentifier>{10DC6977-FCD5-92C9-E542-29DAD1DBF835}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="AALife_Engine\Platform\OpenGL">
+      <UniqueIdentifier>{4453B420-B06B-9B4A-7918-2BE4E5EF2FE4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="AALife_Engine\Platform\Windows">
+      <UniqueIdentifier>{4A965A8F-36BC-24F6-1F02-AAC10BC749C2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\AALife_Engine.h" />
@@ -31,6 +43,9 @@
     <ClInclude Include="src\AALife_Engine\Events\MouseEvent.h">
       <Filter>AALife_Engine\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\AALife_Engine\ImGui\ImGuiLayer.h">
+      <Filter>AALife_Engine\ImGui</Filter>
+    </ClInclude>
     <ClInclude Include="src\AALife_Engine\Layer.h">
       <Filter>AALife_Engine</Filter>
     </ClInclude>
@@ -40,17 +55,21 @@
     <ClInclude Include="src\AALife_Engine\Log.h">
       <Filter>AALife_Engine</Filter>
     </ClInclude>
+    <ClInclude Include="src\AALife_Engine\Platform\Windows\WindowsWindow.h">
+      <Filter>AALife_Engine\Platform\Windows</Filter>
+    </ClInclude>
     <ClInclude Include="src\AALife_Engine\Window.h">
       <Filter>AALife_Engine</Filter>
     </ClInclude>
-    <ClInclude Include="src\AALife_Engine\WindowsWindow.h">
-      <Filter>AALife_Engine</Filter>
-    </ClInclude>
     <ClInclude Include="src\alePCH.h" />
+    <ClInclude Include="src\AALife_Engine\Platform\OpenGL\ImGuiOpenGLRenderer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\AALife_Engine\Application.cpp">
       <Filter>AALife_Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AALife_Engine\ImGui\ImGuiLayer.cpp">
+      <Filter>AALife_Engine\ImGui</Filter>
     </ClCompile>
     <ClCompile Include="src\AALife_Engine\Layer.cpp">
       <Filter>AALife_Engine</Filter>
@@ -61,8 +80,11 @@
     <ClCompile Include="src\AALife_Engine\Log.cpp">
       <Filter>AALife_Engine</Filter>
     </ClCompile>
-    <ClCompile Include="src\AALife_Engine\WindowsWindow.cpp">
-      <Filter>AALife_Engine</Filter>
+    <ClCompile Include="src\AALife_Engine\Platform\OpenGL\ImGuiOpenGLRenderer.cpp">
+      <Filter>AALife_Engine\Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AALife_Engine\Platform\Windows\WindowsWindow.cpp">
+      <Filter>AALife_Engine\Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\alePCH.cpp" />
   </ItemGroup>

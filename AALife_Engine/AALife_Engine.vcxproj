@@ -79,8 +79,8 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>alePCH.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>ALE_PLATFORM_WINDOWS;ALE_BUILD_DLL;ALE_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>ALE_PLATFORM_WINDOWS;ALE_BUILD_DLL;GLFW_INCLUDE_NONE;ALE_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\Glad\include;vendor\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -102,8 +102,8 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>alePCH.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>ALE_PLATFORM_WINDOWS;ALE_BUILD_DLL;ALE_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>ALE_PLATFORM_WINDOWS;ALE_BUILD_DLL;GLFW_INCLUDE_NONE;ALE_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\Glad\include;vendor\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -125,8 +125,8 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>alePCH.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>ALE_PLATFORM_WINDOWS;ALE_BUILD_DLL;ALE_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>ALE_PLATFORM_WINDOWS;ALE_BUILD_DLL;GLFW_INCLUDE_NONE;ALE_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\Glad\include;vendor\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -152,19 +152,23 @@
     <ClInclude Include="src\AALife_Engine\Events\Event.h" />
     <ClInclude Include="src\AALife_Engine\Events\KeyEvent.h" />
     <ClInclude Include="src\AALife_Engine\Events\MouseEvent.h" />
+    <ClInclude Include="src\AALife_Engine\ImGui\ImGuiLayer.h" />
     <ClInclude Include="src\AALife_Engine\Layer.h" />
     <ClInclude Include="src\AALife_Engine\LayerStack.h" />
     <ClInclude Include="src\AALife_Engine\Log.h" />
+    <ClInclude Include="src\AALife_Engine\Platform\OpenGL\ImGuiOpenGLRenderer.h" />
+    <ClInclude Include="src\AALife_Engine\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\AALife_Engine\Window.h" />
-    <ClInclude Include="src\AALife_Engine\WindowsWindow.h" />
     <ClInclude Include="src\alePCH.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\AALife_Engine\Application.cpp" />
+    <ClCompile Include="src\AALife_Engine\ImGui\ImGuiLayer.cpp" />
     <ClCompile Include="src\AALife_Engine\Layer.cpp" />
     <ClCompile Include="src\AALife_Engine\LayerStack.cpp" />
     <ClCompile Include="src\AALife_Engine\Log.cpp" />
-    <ClCompile Include="src\AALife_Engine\WindowsWindow.cpp" />
+    <ClCompile Include="src\AALife_Engine\Platform\OpenGL\ImGuiOpenGLRenderer.cpp" />
+    <ClCompile Include="src\AALife_Engine\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\alePCH.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
@@ -172,6 +176,12 @@
   <ItemGroup>
     <ProjectReference Include="vendor\GLFW\GLFW.vcxproj">
       <Project>{154B857C-0182-860D-AA6E-6C109684020F}</Project>
+    </ProjectReference>
+    <ProjectReference Include="vendor\Glad\Glad.vcxproj">
+      <Project>{BDD6857C-A90D-870D-52FA-6C103E10030F}</Project>
+    </ProjectReference>
+    <ProjectReference Include="vendor\imgui\ImGui.vcxproj">
+      <Project>{C0FF640D-2C14-8DBE-F595-301E616989EF}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

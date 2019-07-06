@@ -26,7 +26,8 @@ class Sandbox : public ale::Application
 {
 public:
 	Sandbox() {
-		PushLayer(new ExampleLayer());
+		//PushLayer(new ExampleLayer());
+		PushOverlay(new ale::ImGuiLayer());
 	}
 
 	~Sandbox() {
