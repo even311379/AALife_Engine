@@ -2,7 +2,6 @@
 
 #include "Event.h"
 
-
 namespace ale {
 
 	class ALE_API MouseMovedEvent : public Event

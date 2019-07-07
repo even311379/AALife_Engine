@@ -4,6 +4,9 @@
 [submodule "AALife_Engine/vendor/GLFW"]
 	path = AALife_Engine/vendor/GLFW
 	url = https://github.com/TheCherno/glfw/
+[submodule "AALife_Engine/vendor/glm"]
+	path = AALife_Engine/vendor/glm
+	url = https://github.com/g-truc/glm
 [submodule "AALife_Engine/vendor/imgui"]
 	path = AALife_Engine/vendor/imgui
-	url = https://github.com/ocornut/imgui
+	url = https://github.com/TheCherno/imgui

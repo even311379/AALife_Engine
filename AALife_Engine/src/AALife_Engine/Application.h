@@ -7,6 +7,7 @@
 #include "AALife_Engine/Events/Event.h"
 #include "AALife_Engine/Events/ApplicationEvent.h"
 
+#include "AALife_Engine/ImGui/ImGuiLayer.h"
 
 namespace ale {
 
@@ -30,6 +31,7 @@ namespace ale {
 		bool OnWindowClose(WindowCloseEvent& e);
 
 		std::unique_ptr<Window> m_Window;
+		ImGuiLayer* m_ImGuiLayer;
 		bool m_Running = true;
 		LayerStack m_LayerStack;
 

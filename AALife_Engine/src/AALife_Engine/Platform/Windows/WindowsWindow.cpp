@@ -43,7 +43,7 @@ namespace ale {
 		if (!s_GLFWInitialized)
 		{
 			int success = glfwInit();
-			ALE_CORE_ASSERT(sucess, "Counld not intialize GLFW");
+			ALE_CORE_ASSERT(success, "Counld not intialize GLFW");
 			glfwSetErrorCallback(GLFWErrorCallback);
 			s_GLFWInitialized = true;
 		}

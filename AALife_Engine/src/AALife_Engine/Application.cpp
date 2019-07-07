@@ -4,6 +4,7 @@
 #include "AALife_Engine/Events/ApplicationEvent.h"
 #include "AALife_Engine/Log.h"
 
+#include "Input.h"
 #include <glad/glad.h>
 
 namespace ale {
@@ -19,6 +20,9 @@ namespace ale {
 
 		m_Window = std::unique_ptr<Window>(Window::Create());
 		m_Window->SetEventCallback(BIND_EVENT_FN(OnEvent));
+
+		m_ImGuiLayer = new ImGuiLayer();
+		PushOverlay(m_ImGuiLayer);
 	}
 
 	Application::~Application()
@@ -28,13 +32,11 @@ namespace ale {
 	void Application::PushLayer(Layer* layer)
 	{
 		m_LayerStack.PushLayer(layer);
-		layer->OnAttach();
 	}
 
 	void Application::PushOverlay(Layer* layer)
 	{
 		m_LayerStack.PushOverlay(layer);
-		layer->OnAttach();
 	}
 
 	void Application::OnEvent(Event& e)
@@ -49,7 +51,7 @@ namespace ale {
 				break;
 		}
 
-		ALE_CORE_TRACE("{0}", e);
+		//ALE_CORE_TRACE("{0}", e);
 	}
 
 
@@ -62,6 +64,13 @@ namespace ale {
 
 			for (Layer* layer : m_LayerStack)
 				layer->OnUpdate();
+
+			m_ImGuiLayer->Begin();
+			for (Layer* layer : m_LayerStack)
+				layer->OnImGuiRender();
+			m_ImGuiLayer->End();
+			//auto [x, y] = Input::GetMousePosition();
+			//ALE_CORE_TRACE("Mouse pos from input.h: {0}, {1}", x, y);
 
 			m_Window->OnUpdate();
 		}

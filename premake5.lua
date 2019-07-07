@@ -1,5 +1,6 @@
 workspace "AALife_Engine"
 	architecture "x64"
+	startproject "Sandbox"
 
 	configurations
 	{
@@ -8,6 +9,8 @@ workspace "AALife_Engine"
 		"Dist"
 	}
 
+
+
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 -- Include directories relative to root folder (solution dir)
@@ -15,15 +18,21 @@ IncludeDir = {}
 IncludeDir["GLFW"] = "AALife_Engine/vendor/GLFW/include"
 IncludeDir["Glad"] = "AALife_Engine/vendor/Glad/include"
 IncludeDir["ImGui"] = "AALife_Engine/vendor/imgui"
+IncludeDir["glm"] = "AALife_Engine/vendor/glm"
 
-include "AALife_Engine/vendor/GLFW"
-include "AALife_Engine/vendor/Glad"
-include "AALife_Engine/vendor/imgui"
+group "Dependencies"
+	include "AALife_Engine/vendor/GLFW"
+	include "AALife_Engine/vendor/Glad"
+	include "AALife_Engine/vendor/imgui"
+
+
+group ""
 
 project "AALife_Engine"
 	location "AALife_Engine"
-	kind "SharedLib"
+	kind "StaticLib"
 	language "C++"
+	staticruntime "off"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -34,7 +43,14 @@ project "AALife_Engine"
 	files
 	{
 		"%{prj.name}/src/**.h",
-		"%{prj.name}/src/**.cpp"
+		"%{prj.name}/src/**.cpp",
+		"%{prj.name}/vendor/glm/glm/**.hpp",
+		"%{prj.name}/vendor/glm/glm/**.inl",
+	}
+
+	defines
+	{
+		"_CRT_SECURE_NO_WARNINGS"
 	}
 
 	includedirs
@@ -43,7 +59,8 @@ project "AALife_Engine"
 		"%{prj.name}/vendor/spdlog/include",
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.Glad}",
-		"%{IncludeDir.ImGui}"
+		"%{IncludeDir.ImGui}",
+		"%{IncludeDir.glm}"
 	}
 
 	links
@@ -56,7 +73,6 @@ project "AALife_Engine"
 
 	filter "system:windows"
 		cppdialect "C++17"
-		staticruntime "On"
 		systemversion "latest"
 
 		defines
@@ -68,28 +84,30 @@ project "AALife_Engine"
 
 		postbuildcommands
 		{
-			("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox")
+			("{COPY} %{cfg.buildtarget.relpath} \"../bin/" .. outputdir .. "/Sandbox/\"")
 		}
 
 	filter "configurations:Debug"
 		defines "ALE_DEBUG"
-		buildoptions "/MDd"
-		symbols "On"
+		runtime "Debug"
+		symbols "on"
 
 	filter "configurations:Release"
 		defines "ALE_RELEASE"
-		buildoptions "/MD"
-		symbols "On"
+		runtime "Release"
+		symbols "on"
 
 	filter "configurations:Dist"
 		defines "ALE_DIST"
-		buildoptions "/MD"
-		symbols "On"
+		runtime "Release"
+		symbols "on"
 
 project "Sandbox"
 	location "Sandbox"
 	kind "ConsoleApp"
 	language "C++"
+	staticruntime "off"
+
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -103,7 +121,9 @@ project "Sandbox"
 	includedirs
 	{
 		"AALife_Engine/vendor/spdlog/include",
-		"AALife_Engine/src"
+		"AALife_Engine/src",
+		"AALife_Engine/vendor",
+		"%{IncludeDir.glm}"
 	}
 
 	links
@@ -113,7 +133,6 @@ project "Sandbox"
 
 	filter "system:windows"
 		cppdialect "C++17"
-		staticruntime "On"
 		systemversion "latest"
 
 		defines
@@ -123,15 +142,16 @@ project "Sandbox"
 
 	filter "configurations:Debug"
 		defines "ALE_DEBUG"
-		buildoptions "/MDd"
-		symbols "On"
+		runtime "Debug"
+		symbols "on"
 
 	filter "configurations:Release"
 		defines "ALE_RELEASE"
-		buildoptions "/MD"
-		symbols "On"
+		runtime "Release"
+		symbols "on"
 
 	filter "configurations:Dist"
 		defines "ALE_DIST"
-		buildoptions "/MD"
-		symbols "On"
+		runtime "Release"
+		symbols "on"
+
