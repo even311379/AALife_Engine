@@ -1191,6 +1191,8 @@
     <ClInclude Include="vendor\glm\glm\vector_relational.hpp">
       <Filter>vendor\glm\glm</Filter>
     </ClInclude>
+    <ClInclude Include="src\AALife_Engine\Renderer\GraphicsContext.h" />
+    <ClInclude Include="src\AALife_Engine\Platform\OpenGL\OpenGLContext.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\AALife_Engine\Application.cpp">
@@ -1220,5 +1222,6 @@
     <ClCompile Include="src\alePCH.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="src\AALife_Engine\Platform\OpenGL\OpenGLContext.cpp" />
   </ItemGroup>
 </Project>

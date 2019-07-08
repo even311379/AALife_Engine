@@ -17,9 +17,6 @@ namespace ale {
 	{
 	}
 
-	ImGuiLayer::~ImGuiLayer()
-	{
-	}
 	void ImGuiLayer::OnAttach()
 	{
 		// Setup Dear ImGui context
@@ -88,11 +85,8 @@ namespace ale {
 
 	void ImGuiLayer::OnImGuiRender()
 	{
-		static bool show = true;
-		ImGui::ShowDemoWindow(&show);
+		//static bool show = true;
+		//ImGui::ShowDemoWindow(&show);
 	}
-
-
-
 
 }

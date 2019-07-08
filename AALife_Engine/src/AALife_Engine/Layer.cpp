@@ -9,9 +9,5 @@ namespace ale {
 
 	}
 
-	Layer::~Layer()
-	{
-
-	}
 
 }

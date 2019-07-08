@@ -5,7 +5,9 @@
 #include "AALife_Engine/Events/KeyEvent.h"
 #include "AALife_Engine/Events/MouseEvent.h"
 
-#include "glad/glad.h"
+#include "AALife_Engine/Platform/OpenGL/OpenGLContext.h"
+
+
 
 namespace ale {
 
@@ -40,6 +42,8 @@ namespace ale {
 
 		ALE_CORE_INFO("Creating window {0} ({1}, {2})", props.Title, props.Width, props.Height);
 
+		
+
 		if (!s_GLFWInitialized)
 		{
 			int success = glfwInit();
@@ -49,9 +53,10 @@ namespace ale {
 		}
 
 		m_Window = glfwCreateWindow((int)props.Width, (int)props.Height, m_Data.Title.c_str(), nullptr, nullptr);
-		glfwMakeContextCurrent(m_Window);
-		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
-		ALE_CORE_ASSERT(status, "Failed to initialize Glad!");
+
+		m_Context = new OpenGLContext(m_Window);
+		m_Context->Init();
+
 		glfwSetWindowUserPointer(m_Window, &m_Data);
 		SetVSync(true);
 
@@ -155,7 +160,8 @@ namespace ale {
 	void WindowsWindow::OnUpdate()
 	{
 		glfwPollEvents();
-		glfwSwapBuffers(m_Window);
+		m_Context->SwapBuffers();
+		
 	}
 
 	void WindowsWindow::SetVSync(bool enabled)

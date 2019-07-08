@@ -76,11 +76,11 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>alePCH.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;ALE_PLATFORM_WINDOWS;ALE_BUILD_DLL;GLFW_INCLUDE_NONE;ALE_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>ALE_PLATFORM_WINDOWS;ALE_BUILD_DLL;GLFW_INCLUDE_NONE;ALE_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\Glad\include;vendor\imgui;vendor\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
-      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -90,20 +90,17 @@
     <Lib>
       <AdditionalDependencies>opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
-    <PostBuildEvent>
-      <Command>IF EXIST ..\bin\Debug-windows-x86_64\AALife_Engine\AALife_Engine.lib\ (xcopy /Q /E /Y /I ..\bin\Debug-windows-x86_64\AALife_Engine\AALife_Engine.lib "..\bin\Debug-windows-x86_64\Sandbox\" &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Debug-windows-x86_64\AALife_Engine\AALife_Engine.lib "..\bin\Debug-windows-x86_64\Sandbox\" &gt; nul)</Command>
-    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>alePCH.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;ALE_PLATFORM_WINDOWS;ALE_BUILD_DLL;GLFW_INCLUDE_NONE;ALE_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>ALE_PLATFORM_WINDOWS;ALE_BUILD_DLL;GLFW_INCLUDE_NONE;ALE_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\Glad\include;vendor\imgui;vendor\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
-      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -113,20 +110,17 @@
     <Lib>
       <AdditionalDependencies>opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
-    <PostBuildEvent>
-      <Command>IF EXIST ..\bin\Release-windows-x86_64\AALife_Engine\AALife_Engine.lib\ (xcopy /Q /E /Y /I ..\bin\Release-windows-x86_64\AALife_Engine\AALife_Engine.lib "..\bin\Release-windows-x86_64\Sandbox\" &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Release-windows-x86_64\AALife_Engine\AALife_Engine.lib "..\bin\Release-windows-x86_64\Sandbox\" &gt; nul)</Command>
-    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">
     <ClCompile>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>alePCH.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;ALE_PLATFORM_WINDOWS;ALE_BUILD_DLL;GLFW_INCLUDE_NONE;ALE_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>ALE_PLATFORM_WINDOWS;ALE_BUILD_DLL;GLFW_INCLUDE_NONE;ALE_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>src;vendor\spdlog\include;vendor\GLFW\include;vendor\Glad\include;vendor\imgui;vendor\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
-      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -136,9 +130,6 @@
     <Lib>
       <AdditionalDependencies>opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Lib>
-    <PostBuildEvent>
-      <Command>IF EXIST ..\bin\Dist-windows-x86_64\AALife_Engine\AALife_Engine.lib\ (xcopy /Q /E /Y /I ..\bin\Dist-windows-x86_64\AALife_Engine\AALife_Engine.lib "..\bin\Dist-windows-x86_64\Sandbox\" &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Dist-windows-x86_64\AALife_Engine\AALife_Engine.lib "..\bin\Dist-windows-x86_64\Sandbox\" &gt; nul)</Command>
-    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="src\AALife_Engine.h" />
@@ -156,8 +147,10 @@
     <ClInclude Include="src\AALife_Engine\LayerStack.h" />
     <ClInclude Include="src\AALife_Engine\Log.h" />
     <ClInclude Include="src\AALife_Engine\MouseButtonCodes.h" />
+    <ClInclude Include="src\AALife_Engine\Platform\OpenGL\OpenGLContext.h" />
     <ClInclude Include="src\AALife_Engine\Platform\Windows\WindowsInput.h" />
     <ClInclude Include="src\AALife_Engine\Platform\Windows\WindowsWindow.h" />
+    <ClInclude Include="src\AALife_Engine\Renderer\GraphicsContext.h" />
     <ClInclude Include="src\AALife_Engine\Window.h" />
     <ClInclude Include="src\alePCH.h" />
     <ClInclude Include="vendor\glm\glm\common.hpp" />
@@ -532,6 +525,7 @@
     <ClCompile Include="src\AALife_Engine\Layer.cpp" />
     <ClCompile Include="src\AALife_Engine\LayerStack.cpp" />
     <ClCompile Include="src\AALife_Engine\Log.cpp" />
+    <ClCompile Include="src\AALife_Engine\Platform\OpenGL\OpenGLContext.cpp" />
     <ClCompile Include="src\AALife_Engine\Platform\Windows\WindowsInput.cpp" />
     <ClCompile Include="src\AALife_Engine\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\alePCH.cpp">
