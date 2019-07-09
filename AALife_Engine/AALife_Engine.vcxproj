@@ -151,6 +151,7 @@
     <ClInclude Include="src\AALife_Engine\Platform\Windows\WindowsInput.h" />
     <ClInclude Include="src\AALife_Engine\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\AALife_Engine\Renderer\GraphicsContext.h" />
+    <ClInclude Include="src\AALife_Engine\Renderer\Shader.h" />
     <ClInclude Include="src\AALife_Engine\Window.h" />
     <ClInclude Include="src\alePCH.h" />
     <ClInclude Include="vendor\glm\glm\common.hpp" />
@@ -528,6 +529,7 @@
     <ClCompile Include="src\AALife_Engine\Platform\OpenGL\OpenGLContext.cpp" />
     <ClCompile Include="src\AALife_Engine\Platform\Windows\WindowsInput.cpp" />
     <ClCompile Include="src\AALife_Engine\Platform\Windows\WindowsWindow.cpp" />
+    <ClCompile Include="src\AALife_Engine\Renderer\Shader.cpp" />
     <ClCompile Include="src\alePCH.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>

@@ -17,12 +17,12 @@ namespace ale {
 	{
 		glfwMakeContextCurrent(m_WindowHandle);
 		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
-		ALE_CORE_ASSERT(status, "Failed to initialize Glad!");
+		//ALE_CORE_ASSERT(status, "Failed to initialize Glad!");
 
-		ALE_CORE_INFO("OpenGL iNFO:");
-		ALE_CORE_INFO("  Vendor: {0}", glGetString(GL_VENDOR));
-		ALE_CORE_INFO("  Renderer: {0}", glGetString(GL_RENDERER));
-		ALE_CORE_INFO("  Version: {0}", glGetString(GL_VERSION));
+		ALE_INFO("OpenGL iNFO:");
+		ALE_INFO("  Vendor: {0}", glGetString(GL_VENDOR));
+		ALE_INFO("  Renderer: {0}", glGetString(GL_RENDERER));
+		ALE_INFO("  Version: {0}", glGetString(GL_VERSION));
 	}
 
 	void OpenGLContext::SwapBuffers()
