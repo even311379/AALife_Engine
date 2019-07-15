@@ -45,6 +45,7 @@ public:
 			if (e.GetKeyCode() == ALE_KEY_TAB)
 				ALE_TRACE("Tab key is pressed (event)!");
 			ALE_TRACE("{0}", (char)e.GetKeyCode());
+
 		}
 	}
 
