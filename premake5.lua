@@ -9,6 +9,10 @@ workspace "AALife_Engine"
 		"Dist"
 	}
 
+    flags
+	{
+		"MultiProcessorCompile"
+	}
 
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
@@ -19,6 +23,7 @@ IncludeDir["GLFW"] = "AALife_Engine/vendor/GLFW/include"
 IncludeDir["Glad"] = "AALife_Engine/vendor/Glad/include"
 IncludeDir["ImGui"] = "AALife_Engine/vendor/imgui"
 IncludeDir["glm"] = "AALife_Engine/vendor/glm"
+IncludeDir["stb_image"] = "AALife_Engine/vendor/stb_image"
 
 group "Dependencies"
 	include "AALife_Engine/vendor/GLFW"
@@ -45,15 +50,17 @@ project "AALife_Engine"
 	{
 		"%{prj.name}/src/**.h",
 		"%{prj.name}/src/**.cpp",
+        "%{prj.name}/vendor/stb_image/**.h",
+        "%{prj.name}/vendor/stb_image/**.cpp",
 		"%{prj.name}/vendor/glm/glm/**.hpp",
 		"%{prj.name}/vendor/glm/glm/**.inl",
 	}
---[[
+
 	defines
 	{
 		"_CRT_SECURE_NO_WARNINGS"
 	}
-]]--
+
 	includedirs
 	{
 		"%{prj.name}/src",
@@ -61,7 +68,8 @@ project "AALife_Engine"
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.Glad}",
 		"%{IncludeDir.ImGui}",
-		"%{IncludeDir.glm}"
+		"%{IncludeDir.glm}",
+        "%{IncludeDir.stb_image}",
 	}
 
 	links
@@ -77,7 +85,6 @@ project "AALife_Engine"
 
 		defines
 		{
-			"ALE_PLATFORM_WINDOWS",
 			"ALE_BUILD_DLL",
 			"GLFW_INCLUDE_NONE"
 		}
@@ -128,12 +135,7 @@ project "Sandbox"
 	}
 
 	filter "system:windows"
-		systemversion "latest"
-
-		defines
-		{
-			"ALE_PLATFORM_WINDOWS",
-		}
+		systemversion "latest"    
 
 	filter "configurations:Debug"
 		defines "ALE_DEBUG"

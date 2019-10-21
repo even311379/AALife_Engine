@@ -1,6 +1,6 @@
 #pragma once
 
-#include "AALife_Engine/Window.h"
+#include "AALife_Engine/Core/Window.h"
 #include "AALife_Engine/Renderer/GraphicsContext.h"
 
 #include <GLFW/glfw3.h>
@@ -31,7 +31,7 @@ namespace ale {
 
 	private:
 		GLFWwindow* m_Window;
-		GraphicsContext* m_Context;
+        Scope<GraphicsContext> m_Context;
 
 		struct WindowData
 		{

@@ -8,11 +8,12 @@
 
 #include <string>
 #include <sstream>
+#include <array>
 #include <vector>
 #include <unordered_map>
 #include <unordered_set>
 
-#include "AALife_Engine/Log.h"
+#include "AALife_Engine/Core/Log.h"
 
 #ifdef ALE_PLATFORM_WINDOWS
 	#include <Windows.h>

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "AALife_Engine/Input.h"
+#include "AALife_Engine/Core/Input.h"
 
 namespace ale {
 

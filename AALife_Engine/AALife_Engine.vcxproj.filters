@@ -7,6 +7,9 @@
     <Filter Include="src\AALife_Engine">
       <UniqueIdentifier>{93915792-FFA7-5528-481F-E149B47426B0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\AALife_Engine\Core">
+      <UniqueIdentifier>{CBA91937-B7A3-4289-A010-D9998CA9A8F5}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\AALife_Engine\Events">
       <UniqueIdentifier>{175A4D69-037F-9CE9-2CCA-8179184E9B07}</UniqueIdentifier>
     </Filter>
@@ -16,8 +19,14 @@
     <Filter Include="src\AALife_Engine\Platform">
       <UniqueIdentifier>{47432A0E-3353-D6DE-9C0C-3BFD883BC577}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\AALife_Engine\Platform\OpenGL">
+      <UniqueIdentifier>{9B963FDE-0705-955D-50EE-4F5DBC9B8AF9}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\AALife_Engine\Platform\Windows">
       <UniqueIdentifier>{81444EFE-6D80-5168-D692-695FC2EDF982}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\AALife_Engine\Renderer">
+      <UniqueIdentifier>{994A07E9-855A-B3B9-EE13-18D8DA42A252}</UniqueIdentifier>
     </Filter>
     <Filter Include="vendor">
       <UniqueIdentifier>{B3738122-9F15-ACF8-88D0-BF4C74113349}</UniqueIdentifier>
@@ -40,19 +49,46 @@
     <Filter Include="vendor\glm\glm\gtx">
       <UniqueIdentifier>{B3A6A76B-9F8A-68C1-08EB-6214F4ED5243}</UniqueIdentifier>
     </Filter>
+    <Filter Include="vendor\stb_image">
+      <UniqueIdentifier>{0DA0BA59-F998-D9AB-22CB-BE300E23B9B7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\AALife_Engine.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="src\AALife_Engine\Application.h">
-      <Filter>src\AALife_Engine</Filter>
+    <ClInclude Include="src\AALife_Engine\Core\Application.h">
+      <Filter>src\AALife_Engine\Core</Filter>
     </ClInclude>
-    <ClInclude Include="src\AALife_Engine\Core.h">
-      <Filter>src\AALife_Engine</Filter>
+    <ClInclude Include="src\AALife_Engine\Core\Core.h">
+      <Filter>src\AALife_Engine\Core</Filter>
     </ClInclude>
-    <ClInclude Include="src\AALife_Engine\EntryPoint.h">
-      <Filter>src\AALife_Engine</Filter>
+    <ClInclude Include="src\AALife_Engine\Core\EntryPoint.h">
+      <Filter>src\AALife_Engine\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AALife_Engine\Core\Input.h">
+      <Filter>src\AALife_Engine\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AALife_Engine\Core\KeyCodes.h">
+      <Filter>src\AALife_Engine\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AALife_Engine\Core\Layer.h">
+      <Filter>src\AALife_Engine\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AALife_Engine\Core\LayerStack.h">
+      <Filter>src\AALife_Engine\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AALife_Engine\Core\Log.h">
+      <Filter>src\AALife_Engine\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AALife_Engine\Core\MouseButtonCodes.h">
+      <Filter>src\AALife_Engine\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AALife_Engine\Core\Timestep.h">
+      <Filter>src\AALife_Engine\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AALife_Engine\Core\Window.h">
+      <Filter>src\AALife_Engine\Core</Filter>
     </ClInclude>
     <ClInclude Include="src\AALife_Engine\Events\ApplicationEvent.h">
       <Filter>src\AALife_Engine\Events</Filter>
@@ -69,23 +105,23 @@
     <ClInclude Include="src\AALife_Engine\ImGui\ImGuiLayer.h">
       <Filter>src\AALife_Engine\ImGui</Filter>
     </ClInclude>
-    <ClInclude Include="src\AALife_Engine\Input.h">
-      <Filter>src\AALife_Engine</Filter>
+    <ClInclude Include="src\AALife_Engine\Platform\OpenGL\OpenGLBuffer.h">
+      <Filter>src\AALife_Engine\Platform\OpenGL</Filter>
     </ClInclude>
-    <ClInclude Include="src\AALife_Engine\KeyCodes.h">
-      <Filter>src\AALife_Engine</Filter>
+    <ClInclude Include="src\AALife_Engine\Platform\OpenGL\OpenGLContext.h">
+      <Filter>src\AALife_Engine\Platform\OpenGL</Filter>
     </ClInclude>
-    <ClInclude Include="src\AALife_Engine\Layer.h">
-      <Filter>src\AALife_Engine</Filter>
+    <ClInclude Include="src\AALife_Engine\Platform\OpenGL\OpenGLRendererAPI.h">
+      <Filter>src\AALife_Engine\Platform\OpenGL</Filter>
     </ClInclude>
-    <ClInclude Include="src\AALife_Engine\LayerStack.h">
-      <Filter>src\AALife_Engine</Filter>
+    <ClInclude Include="src\AALife_Engine\Platform\OpenGL\OpenGLShader.h">
+      <Filter>src\AALife_Engine\Platform\OpenGL</Filter>
     </ClInclude>
-    <ClInclude Include="src\AALife_Engine\Log.h">
-      <Filter>src\AALife_Engine</Filter>
+    <ClInclude Include="src\AALife_Engine\Platform\OpenGL\OpenGLTexture.h">
+      <Filter>src\AALife_Engine\Platform\OpenGL</Filter>
     </ClInclude>
-    <ClInclude Include="src\AALife_Engine\MouseButtonCodes.h">
-      <Filter>src\AALife_Engine</Filter>
+    <ClInclude Include="src\AALife_Engine\Platform\OpenGL\OpenGLVertexArray.h">
+      <Filter>src\AALife_Engine\Platform\OpenGL</Filter>
     </ClInclude>
     <ClInclude Include="src\AALife_Engine\Platform\Windows\WindowsInput.h">
       <Filter>src\AALife_Engine\Platform\Windows</Filter>
@@ -93,8 +129,35 @@
     <ClInclude Include="src\AALife_Engine\Platform\Windows\WindowsWindow.h">
       <Filter>src\AALife_Engine\Platform\Windows</Filter>
     </ClInclude>
-    <ClInclude Include="src\AALife_Engine\Window.h">
-      <Filter>src\AALife_Engine</Filter>
+    <ClInclude Include="src\AALife_Engine\Renderer\Buffer.h">
+      <Filter>src\AALife_Engine\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AALife_Engine\Renderer\GraphicsContext.h">
+      <Filter>src\AALife_Engine\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AALife_Engine\Renderer\OrthographicCamera.h">
+      <Filter>src\AALife_Engine\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AALife_Engine\Renderer\OrthographicCameraController.h">
+      <Filter>src\AALife_Engine\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AALife_Engine\Renderer\RenderCommand.h">
+      <Filter>src\AALife_Engine\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AALife_Engine\Renderer\Renderer.h">
+      <Filter>src\AALife_Engine\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AALife_Engine\Renderer\RendererAPI.h">
+      <Filter>src\AALife_Engine\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AALife_Engine\Renderer\Shader.h">
+      <Filter>src\AALife_Engine\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AALife_Engine\Renderer\Texture.h">
+      <Filter>src\AALife_Engine\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AALife_Engine\Renderer\VertexArray.h">
+      <Filter>src\AALife_Engine\Renderer</Filter>
     </ClInclude>
     <ClInclude Include="src\alePCH.h">
       <Filter>src</Filter>
@@ -1191,21 +1254,23 @@
     <ClInclude Include="vendor\glm\glm\vector_relational.hpp">
       <Filter>vendor\glm\glm</Filter>
     </ClInclude>
-    <ClInclude Include="src\AALife_Engine\Renderer\GraphicsContext.h" />
-    <ClInclude Include="src\AALife_Engine\Platform\OpenGL\OpenGLContext.h" />
-    <ClInclude Include="src\AALife_Engine\Renderer\Shader.h" />
-    <ClInclude Include="src\AALife_Engine\Renderer\Buffer.h" />
-    <ClInclude Include="src\AALife_Engine\Platform\OpenGL\OpenGLBuffer.h" />
-    <ClInclude Include="src\AALife_Engine\Renderer\Renderer.h" />
-    <ClInclude Include="src\AALife_Engine\Renderer\VertexArray.h" />
-    <ClInclude Include="src\AALife_Engine\Platform\OpenGL\OpenGLVertexArray.h" />
-    <ClInclude Include="src\AALife_Engine\Renderer\RendererAPI.h" />
-    <ClInclude Include="src\AALife_Engine\Renderer\RenderCommand.h" />
-    <ClInclude Include="src\AALife_Engine\Platform\OpenGL\OpenGLRendererAPI.h" />
+    <ClInclude Include="vendor\stb_image\stb_image.h">
+      <Filter>vendor\stb_image</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AALife_Engine\Renderer\Renderer2D.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\AALife_Engine\Application.cpp">
-      <Filter>src\AALife_Engine</Filter>
+    <ClCompile Include="src\AALife_Engine\Core\Application.cpp">
+      <Filter>src\AALife_Engine\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AALife_Engine\Core\Layer.cpp">
+      <Filter>src\AALife_Engine\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AALife_Engine\Core\LayerStack.cpp">
+      <Filter>src\AALife_Engine\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AALife_Engine\Core\Log.cpp">
+      <Filter>src\AALife_Engine\Core</Filter>
     </ClCompile>
     <ClCompile Include="src\AALife_Engine\ImGui\ImGuiBuild.cpp">
       <Filter>src\AALife_Engine\ImGui</Filter>
@@ -1213,14 +1278,23 @@
     <ClCompile Include="src\AALife_Engine\ImGui\ImGuiLayer.cpp">
       <Filter>src\AALife_Engine\ImGui</Filter>
     </ClCompile>
-    <ClCompile Include="src\AALife_Engine\Layer.cpp">
-      <Filter>src\AALife_Engine</Filter>
+    <ClCompile Include="src\AALife_Engine\Platform\OpenGL\OpenGLBuffer.cpp">
+      <Filter>src\AALife_Engine\Platform\OpenGL</Filter>
     </ClCompile>
-    <ClCompile Include="src\AALife_Engine\LayerStack.cpp">
-      <Filter>src\AALife_Engine</Filter>
+    <ClCompile Include="src\AALife_Engine\Platform\OpenGL\OpenGLContext.cpp">
+      <Filter>src\AALife_Engine\Platform\OpenGL</Filter>
     </ClCompile>
-    <ClCompile Include="src\AALife_Engine\Log.cpp">
-      <Filter>src\AALife_Engine</Filter>
+    <ClCompile Include="src\AALife_Engine\Platform\OpenGL\OpenGLRendererAPI.cpp">
+      <Filter>src\AALife_Engine\Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AALife_Engine\Platform\OpenGL\OpenGLShader.cpp">
+      <Filter>src\AALife_Engine\Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AALife_Engine\Platform\OpenGL\OpenGLTexture.cpp">
+      <Filter>src\AALife_Engine\Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AALife_Engine\Platform\OpenGL\OpenGLVertexArray.cpp">
+      <Filter>src\AALife_Engine\Platform\OpenGL</Filter>
     </ClCompile>
     <ClCompile Include="src\AALife_Engine\Platform\Windows\WindowsInput.cpp">
       <Filter>src\AALife_Engine\Platform\Windows</Filter>
@@ -1228,18 +1302,39 @@
     <ClCompile Include="src\AALife_Engine\Platform\Windows\WindowsWindow.cpp">
       <Filter>src\AALife_Engine\Platform\Windows</Filter>
     </ClCompile>
+    <ClCompile Include="src\AALife_Engine\Renderer\Buffer.cpp">
+      <Filter>src\AALife_Engine\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AALife_Engine\Renderer\OrthographicCamera.cpp">
+      <Filter>src\AALife_Engine\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AALife_Engine\Renderer\OrthographicCameraController.cpp">
+      <Filter>src\AALife_Engine\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AALife_Engine\Renderer\RenderCommand.cpp">
+      <Filter>src\AALife_Engine\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AALife_Engine\Renderer\Renderer.cpp">
+      <Filter>src\AALife_Engine\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AALife_Engine\Renderer\RendererAPI.cpp">
+      <Filter>src\AALife_Engine\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AALife_Engine\Renderer\Shader.cpp">
+      <Filter>src\AALife_Engine\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AALife_Engine\Renderer\Texture.cpp">
+      <Filter>src\AALife_Engine\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AALife_Engine\Renderer\VertexArray.cpp">
+      <Filter>src\AALife_Engine\Renderer</Filter>
+    </ClCompile>
     <ClCompile Include="src\alePCH.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="src\AALife_Engine\Platform\OpenGL\OpenGLContext.cpp" />
-    <ClCompile Include="src\AALife_Engine\Renderer\Shader.cpp" />
-    <ClCompile Include="src\AALife_Engine\Renderer\Buffer.cpp" />
-    <ClCompile Include="src\AALife_Engine\Platform\OpenGL\OpenGLBuffer.cpp" />
-    <ClCompile Include="src\AALife_Engine\Renderer\Renderer.cpp" />
-    <ClCompile Include="src\AALife_Engine\Renderer\VertexArray.cpp" />
-    <ClCompile Include="src\AALife_Engine\Platform\OpenGL\OpenGLVertexArray.cpp" />
-    <ClCompile Include="src\AALife_Engine\Renderer\RendererAPI.cpp" />
-    <ClCompile Include="src\AALife_Engine\Renderer\RenderCommand.cpp" />
-    <ClCompile Include="src\AALife_Engine\Platform\OpenGL\OpenGLRendererAPI.cpp" />
+    <ClCompile Include="vendor\stb_image\stb_image.cpp">
+      <Filter>vendor\stb_image</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AALife_Engine\Renderer\Renderer2D.cpp" />
   </ItemGroup>
 </Project>
