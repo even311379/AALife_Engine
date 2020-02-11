@@ -150,6 +150,7 @@
     <ClInclude Include="src\AALife_Engine\Core\MouseButtonCodes.h" />
     <ClInclude Include="src\AALife_Engine\Core\Timestep.h" />
     <ClInclude Include="src\AALife_Engine\Core\Window.h" />
+    <ClInclude Include="src\AALife_Engine\debug\Instrumentor.h" />
     <ClInclude Include="src\AALife_Engine\Events\ApplicationEvent.h" />
     <ClInclude Include="src\AALife_Engine\Events\Event.h" />
     <ClInclude Include="src\AALife_Engine\Events\KeyEvent.h" />

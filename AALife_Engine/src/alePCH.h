@@ -14,6 +14,7 @@
 #include <unordered_set>
 
 #include "AALife_Engine/Core/Log.h"
+#include "AALife_Engine/Debug/Instrumentor.h"
 
 #ifdef ALE_PLATFORM_WINDOWS
 	#include <Windows.h>

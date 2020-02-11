@@ -21,7 +21,11 @@ private:
     //temp
     ale::Ref<ale::VertexArray> m_SquareVA;
     ale::Ref<ale::Shader> m_FlatColorShader;
+    ale::Ref<ale::Texture2D> m_CheckerboardTexture;
+    ale::Ref<ale::Texture2D> m_HoeTexture;
 
     glm::vec4 m_SquareColor = { 0.71f, 0.3f, 0.43f, 1.0f};
+    glm::vec2 m_Size = { 1.0f, 1.0f };
+
 
 };

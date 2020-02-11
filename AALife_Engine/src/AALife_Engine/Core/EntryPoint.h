@@ -9,12 +9,17 @@ int main(int argc, char** argv)
 	ale::Log::Init();
 	ALE_CORE_WARN("Initialized Log!");
 	
-	//ALE_INFO("Hi! My log system is working? {0}", "123");
-	//ALE_ERROR("This is a fatal message");
-	//ALE_TRACE("This is a TRACE message");
+    ALE_PROFILE_BEGIN_SESSION("Startup", "aleProfile-Startup.json");
 	auto app = ale::CreateApplication();
+    ALE_PROFILE_END_SESSION();
+
+    ALE_PROFILE_BEGIN_SESSION("Runtime", "aleProfile-Runtime.json");
 	app->Run();
+    ALE_PROFILE_END_SESSION();
+
+    ALE_PROFILE_BEGIN_SESSION("Shutdown", "aleProfile-Shutdown.json");
 	delete app;
+    ALE_PROFILE_END_SESSION();
 }
 
 #endif
